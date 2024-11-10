@@ -1,0 +1,145 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 OPR/109.0.0.0" version="24.7.5">
+  <diagram name="Strona-1" id="2TTrF7Y3l1aeq5FfQOIp">
+    <mxGraphModel dx="2265" dy="812" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="r4tQSBVLiv__dO_essp8-2" value="CosmosDB" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="370" y="500" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.017;entryY=0.508;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="r4tQSBVLiv__dO_essp8-3" target="r4tQSBVLiv__dO_essp8-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="20" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-3" value="Queue Storage" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="370" y="320" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-4" value="Queue Trigger" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.cloud_rect" vertex="1" parent="1">
+          <mxGeometry x="-160" y="320" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-5" value="Blob Storage" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="370" y="680" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-6" value="Blob Trigger" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.cloud_rect" vertex="1" parent="1">
+          <mxGeometry x="-160" y="440" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-7" value="CosmosDB Trigger" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.cloud_rect" vertex="1" parent="1">
+          <mxGeometry x="-160" y="560" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-8" value="Event Grid Trigger" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.cloud_rect" vertex="1" parent="1">
+          <mxGeometry x="-160" y="680" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.943;entryY=0.576;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="r4tQSBVLiv__dO_essp8-9" target="r4tQSBVLiv__dO_essp8-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="580" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="600" y="840" />
+              <mxPoint x="600" y="546" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-9" value="Timer Trigger" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.cloud_rect" vertex="1" parent="1">
+          <mxGeometry x="-160" y="800" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.07;entryY=0.4;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="r4tQSBVLiv__dO_essp8-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="240" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="200" y="240" />
+              <mxPoint x="200" y="532" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="r4tQSBVLiv__dO_essp8-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="240" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="r4tQSBVLiv__dO_essp8-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="80" y="720" />
+              <mxPoint x="80" y="380" />
+              <mxPoint y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-14" value="HTTP Trigger" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.cloud_rect" vertex="1" parent="1">
+          <mxGeometry x="-160" y="200" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.994;entryY=0.519;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="r4tQSBVLiv__dO_essp8-5" target="r4tQSBVLiv__dO_essp8-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-16" value="" style="shape=actor;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-450" y="510" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.531;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="r4tQSBVLiv__dO_essp8-16" target="r4tQSBVLiv__dO_essp8-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-425" y="243" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-19" value="" style="endArrow=classic;html=1;rounded=0;exitX=-0.006;exitY=0.508;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.9;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="r4tQSBVLiv__dO_essp8-6" target="r4tQSBVLiv__dO_essp8-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-370" y="410" as="sourcePoint" />
+            <mxPoint x="-270" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-20" value="" style="shape=message;html=1;outlineConnect=0;" vertex="1" parent="r4tQSBVLiv__dO_essp8-19">
+          <mxGeometry width="50" height="40" relative="1" as="geometry">
+            <mxPoint x="-27" y="-20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.994;entryY=0.519;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="r4tQSBVLiv__dO_essp8-2" target="r4tQSBVLiv__dO_essp8-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="540" />
+              <mxPoint x="240" y="602" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-22" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/SQL_Data_Warehouses.svg;" vertex="1" parent="1">
+          <mxGeometry x="-457" y="780" width="64" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.979;entryY=0.51;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="r4tQSBVLiv__dO_essp8-7" target="r4tQSBVLiv__dO_essp8-22">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-200" y="600" />
+              <mxPoint x="-200" y="780" />
+              <mxPoint x="-360" y="780" />
+              <mxPoint x="-360" y="813" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-24" value="Update" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=17;" vertex="1" connectable="0" parent="r4tQSBVLiv__dO_essp8-23">
+          <mxGeometry x="0.2244" relative="1" as="geometry">
+            <mxPoint x="-36" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.31;entryY=0.8;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="r4tQSBVLiv__dO_essp8-8" target="r4tQSBVLiv__dO_essp8-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="30" y="720" />
+              <mxPoint x="30" y="660" />
+              <mxPoint x="420" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-26" value="" style="endArrow=classic;html=1;rounded=0;exitX=-0.002;exitY=0.544;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.9;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="r4tQSBVLiv__dO_essp8-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-151" y="491" as="sourcePoint" />
+            <mxPoint x="-395" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r4tQSBVLiv__dO_essp8-27" value="" style="shape=message;html=1;outlineConnect=0;" vertex="1" parent="r4tQSBVLiv__dO_essp8-26">
+          <mxGeometry width="50" height="40" relative="1" as="geometry">
+            <mxPoint x="-27" y="-20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
