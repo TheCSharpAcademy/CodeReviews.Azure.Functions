@@ -12,10 +12,7 @@ using System.Text;
 using System.Text.Json;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
-
-
 namespace HTTPTrigger;
-
 internal class HTTPTrigger
 {
     private readonly ILogger<HTTPTrigger> _logger;
@@ -75,14 +72,11 @@ internal class HTTPTrigger
         {
             DateTime previousDayStart = date.Value.AddDays(-1).Date;
             DateTime previousDayEnd = previousDayStart.AddDays(1).AddSeconds(-1);
-
-
             var orders = await _context.Orders
                 .Where(x => x.CreateDate >= previousDayStart && x.CreateDate <= previousDayEnd)
                 .ToListAsync();
             return new OkObjectResult(orders);
         }
-
     }
 
     private async Task<IActionResult> GetOrder(string id)
@@ -127,7 +121,6 @@ internal class HTTPTrigger
         string filePath = $"invoice_{order.Id}.txt";
         File.WriteAllText(filePath, sb.ToString());
         UploadFileToLocalAzBlob(filePath);
-
     }
 
     private static async Task UploadFileToLocalAzBlob(string file)
@@ -165,8 +158,6 @@ internal class HTTPTrigger
         {
             _logger.LogInformation(ex.Message);
         }
-
-
     }
 
     private async Task<IActionResult> UpdateOrder(HttpRequest req, string id)
@@ -197,8 +188,6 @@ internal class HTTPTrigger
         {
             return new BadRequestResult();
         }
-
-
     }
 
     private async Task<IActionResult> DeleteOrder(string id)
