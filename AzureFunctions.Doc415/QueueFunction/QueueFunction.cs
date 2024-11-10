@@ -1,5 +1,3 @@
-using System;
-using Azure.Storage.Queues.Models;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 
@@ -8,7 +6,6 @@ namespace QueueFunction
     public class QueueFunction
     {
         private readonly ILogger<QueueFunction> _logger;
-
         public QueueFunction(ILogger<QueueFunction> logger)
         {
             _logger = logger;
@@ -24,7 +21,6 @@ namespace QueueFunction
             catch (Exception ex)
             {
                 _logger.LogError($"Error processing queue message: {ex.Message}, StackTrace: {ex.StackTrace}");
-
                 throw;
             }
         }

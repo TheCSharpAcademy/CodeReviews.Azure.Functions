@@ -16,8 +16,6 @@ public class AppDbContext : DbContext
             .ToContainer("Products")
             .HasPartitionKey(e => e.Id);
 
-
-
         modelBuilder.Entity<Order>()
             .ToContainer("Orders")
             .HasPartitionKey(e => e.Id);

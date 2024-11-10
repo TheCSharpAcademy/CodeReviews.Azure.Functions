@@ -1,35 +1,33 @@
-using System;
-using System.Net.Http;
-using System.Text;
-using System.Text.Json;
 using Azure.Storage.Blobs;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
+using System.Text;
+using System.Text.Json;
 using TimerFunction.Models;
 
 namespace TimerFunction
 {
-    public class Function1
+    public class TimerFunction
     {
         private readonly ILogger _logger;
         private readonly HttpClient _httpClient;
 
-        public Function1(ILoggerFactory loggerFactory, HttpClient httpClient)
+        public TimerFunction(ILoggerFactory loggerFactory, HttpClient httpClient)
         {
-            _logger = loggerFactory.CreateLogger<Function1>();
-            _httpClient = httpClient;   
+            _logger = loggerFactory.CreateLogger<TimerFunction>();
+            _httpClient = httpClient;
         }
 
         [Function("Function1")]
         public async Task Run([TimerTrigger("* * * * *")] TimerInfo myTimer)  // Triggers every minute for test purposes change to "0 0 * * *" for daily trigger
         {
             _logger.LogInformation($"Daily sales: {DateTime.Now}");
-                        
+
             if (myTimer.ScheduleStatus is not null)
             {
                 _logger.LogInformation($"Next timer schedule at: {myTimer.ScheduleStatus.Next}");
             }
-            
+
             try
             {
                 await QueryOrdersAsync(DateTime.Now);
@@ -45,19 +43,19 @@ namespace TimerFunction
         {
             try
             {
-                string dateString = date.Date.ToString("yyyy-MM-dd"); 
-                string requestUrl = $"http://localhost:7029/api/orders?date={dateString}"; 
+                string dateString = date.Date.ToString("yyyy-MM-dd");
+                string requestUrl = $"http://localhost:7029/api/orders?date={dateString}";
 
-                HttpResponseMessage response = await _httpClient.GetAsync(requestUrl); 
-                response.EnsureSuccessStatusCode(); 
+                HttpResponseMessage response = await _httpClient.GetAsync(requestUrl);
+                response.EnsureSuccessStatusCode();
 
-                string result = await response.Content.ReadAsStringAsync(); 
+                string result = await response.Content.ReadAsStringAsync();
                 var orders = JsonSerializer.Deserialize<List<Order>>(result, new JsonSerializerOptions
                 {
-                    PropertyNameCaseInsensitive = true 
+                    PropertyNameCaseInsensitive = true
                 });
 
-                await GenerateDailyReport(orders,date);
+                await GenerateDailyReport(orders, date);
             }
             catch (HttpRequestException httpEx)
             {
@@ -73,22 +71,22 @@ namespace TimerFunction
             }
         }
 
-        internal async Task  GenerateDailyReport(ICollection<Order> orders,DateTime date)
+        internal async Task GenerateDailyReport(ICollection<Order> orders, DateTime date)
         {
-           string filename=date.ToString().Split(' ')[0];
-           var productSummary = orders
-           .SelectMany(order => order.Products) 
-           .GroupBy(product => product.Name)
-           .Select(g => new
-           {
-              ProductName = g.Key,
-              TotalQuantity = g.Sum(p => p.Count),
-              TotalCost = g.Sum(p => p.Count * p.Price)
-           })
-           .ToList();
+            string filename = date.ToString().Split(' ')[0];
+            var productSummary = orders
+            .SelectMany(order => order.Products)
+            .GroupBy(product => product.Name)
+            .Select(g => new
+            {
+                ProductName = g.Key,
+                TotalQuantity = g.Sum(p => p.Count),
+                TotalCost = g.Sum(p => p.Count * p.Price)
+            })
+            .ToList();
 
             var total = 0m;
-    
+
             var sb = new StringBuilder();
             sb.AppendLine($"Daily sales report for: {date}");
             sb.AppendLine("======================================================");

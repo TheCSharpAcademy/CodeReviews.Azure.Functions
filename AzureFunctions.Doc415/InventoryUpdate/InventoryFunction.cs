@@ -1,12 +1,10 @@
-using System;
-using System.Collections.Generic;
 using Microsoft.Azure.Functions.Worker;
-using Microsoft.Extensions.Logging;
-using SharedClassLibrary.Models;
-using SharedClassLibrary.Data;
-using System.Net.Mail;
-using System.Net;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using SharedClassLibrary.Data;
+using SharedClassLibrary.Models;
+using System.Net;
+using System.Net.Mail;
 
 namespace InventoryUpdate
 {
@@ -52,20 +50,17 @@ namespace InventoryUpdate
                     await _context.SaveChangesAsync();
                     SendMail(order.CustomerEmail, order.Status);
                 }
-
-
-                }
+            }
         }
 
-        private static void SendMail(string customerEmail,Status status)
+        private static void SendMail(string customerEmail, Status status)
         {
             string smtpHost = "127.0.0.1";
             int smtpPort = 25;
-
             string fromEmail = "coffeeShop@azuredevelopment.com";
             string toEmail = customerEmail;
             string subject = string.Empty;
-            string body=string.Empty;
+            string body = string.Empty;
 
             switch (status)
             {
@@ -106,13 +101,11 @@ namespace InventoryUpdate
 
             try
             {
-
                 smtpClient.Send(mail);
                 Console.WriteLine("Email sent successfully!");
             }
             catch (Exception ex)
             {
-
                 Console.WriteLine($"Error sending email: {ex.Message}");
             }
         }
@@ -121,13 +114,8 @@ namespace InventoryUpdate
     public class MyDocument
     {
         public string id { get; set; }
-
         public string Text { get; set; }
-
         public int Number { get; set; }
-
         public bool Boolean { get; set; }
     }
-
-
 }

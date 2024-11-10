@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-
-namespace SharedClassLibrary.Models;
+﻿namespace SharedClassLibrary.Models;
 
 public class Order
 {
@@ -26,7 +19,7 @@ public class Order
 }
 
 public enum Status
-{   
+{
     OrderPlaced,
     PaymentComplete,
     OrderShipped,

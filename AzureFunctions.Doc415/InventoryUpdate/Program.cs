@@ -6,7 +6,7 @@ using SharedClassLibrary.Data;
 
 var host = new HostBuilder()
     .ConfigureFunctionsWebApplication()
-    .ConfigureServices((context,services) =>
+    .ConfigureServices((context, services) =>
     {
         var configuration = context.Configuration;
         services.AddApplicationInsightsTelemetryWorkerService();
@@ -19,7 +19,6 @@ var host = new HostBuilder()
                 configuration["CosmoLink:DatabaseName"]
             );
         });
-    
     })
     .Build();
 
