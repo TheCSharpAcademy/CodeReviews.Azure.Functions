@@ -15,7 +15,8 @@ Feel free to explore the code, contribute to the project, and adapt the solution
 
 ## Design scetch:
 
-![image](https://github.com/user-attachments/assets/6f8adb0a-23e8-4b5e-a63a-23116fb232d3)
+![image](https://github.com/user-attachments/assets/a7fc3554-05c7-4080-a4fa-e53b62714723)
+
 
 
 
